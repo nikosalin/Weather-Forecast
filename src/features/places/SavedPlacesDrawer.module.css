@@ -1,0 +1,182 @@
+.root {
+  position: absolute;
+  z-index: 600;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  cursor: pointer;
+  color: #2563eb;
+  background: var(--surface);
+  box-shadow: 0 10px 25px rgba(24, 51, 94, 0.16);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.toggle:hover {
+  background: var(--surface-muted);
+}
+
+.chevron {
+  margin-left: 2px;
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+.drawer {
+  width: 310px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--text-primary);
+  background: var(--surface);
+  box-shadow: 0 18px 45px rgba(24, 51, 94, 0.2);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  margin: 0 0 2px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heading strong {
+  font-size: 15px;
+}
+
+.closeButton {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-secondary);
+  background: transparent;
+  font-size: 23px;
+}
+
+.closeButton:hover {
+  background: var(--surface-muted);
+}
+
+.item {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.placeButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 42px 12px 14px;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.placeButton:hover {
+  background: var(--surface-muted);
+}
+
+.weatherIcon {
+  width: 28px;
+  font-size: 21px;
+  text-align: center;
+}
+
+.placeName {
+  min-width: 0;
+  flex: 1;
+}
+
+.placeName strong,
+.placeName small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeName strong {
+  font-size: 13px;
+}
+
+.placeName small {
+  margin-top: 2px;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.temperature {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.removeButton {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-secondary);
+  background: transparent;
+  font-size: 20px;
+}
+
+.removeButton:hover,
+.removeButton:focus-visible {
+  color: #b42318;
+  background: #fee2e2;
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .root {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+
+  .panelOpen {
+  display: none;
+}
+}

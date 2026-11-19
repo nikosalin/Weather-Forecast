@@ -1,0 +1,78 @@
+.layout {
+  position: relative;
+  height: calc(100svh - 72px);
+  overflow: hidden;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  background: #dbeafe;
+}
+
+.intro {
+  position: absolute;
+  z-index: 500;
+  top: 24px;
+  left: 24px;
+  width: 252px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 18px 50px rgba(24, 51, 94, 0.2);
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.introText {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.savedCount {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+:global(html.dark) .map {
+  background: #0b1220;
+}
+
+:global(html.dark) .map :global(.leaflet-tile-pane) {
+  filter: brightness(0.58) saturate(0.75) hue-rotate(180deg);
+}
+
+:global(html.dark) .map :global(.leaflet-control-attribution) {
+  color: #a9b8ce;
+  background: rgba(15, 23, 42, 0.85);
+}
+
+:global(html.dark) .map :global(.leaflet-control-attribution a) {
+  color: #93c5fd;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    height: calc(100svh - 60px);
+  }
+
+  .intro {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}

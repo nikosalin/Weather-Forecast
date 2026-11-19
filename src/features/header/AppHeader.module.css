@@ -1,0 +1,116 @@
+.root {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brandMark {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #2563eb;
+  font-size: 24px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.textButton {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.textButton:hover {
+  color: #2563eb;
+  background: var(--surface-muted);
+}
+
+.locationButton {
+  display: inline-flex;
+  height: 42px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #1d4ed8;
+  background: var(--surface-muted);
+  font-size: 13px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.locationButton:hover {
+  border-color: #93c5fd;
+  background: #dbeafe;
+}
+
+@media (max-width: 700px) {
+  .root {
+    height: 60px;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+ .brandLabel,
+.locationLabel,
+.themeLabel {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+}
+
+.textButton {
+  padding: 8px 6px;
+}
+
+  .locationButton {
+    width: 42px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.themeIcon {
+  margin-right: 5px;
+}
+
+@media (max-width: 700px) {
+  .themeIcon {
+    margin-right: 0;
+  }
+}

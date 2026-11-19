@@ -1,0 +1,60 @@
+.root {
+  margin: 22px 0;
+}
+
+.title {
+  margin: 0 0 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.day {
+  min-width: 0;
+  padding: 9px 3px;
+  border-radius: 9px;
+  text-align: center;
+  background: var(--surface-muted);
+}
+
+.dayName {
+  overflow: hidden;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  display: block;
+  margin: 7px 0;
+  font-size: 22px;
+}
+
+.temperatureRange {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.temperatureRange span:last-child {
+  color: var(--text-secondary);
+  font-weight: 650;
+}
+
+.rain {
+  margin: 7px 0 0;
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 750;
+}

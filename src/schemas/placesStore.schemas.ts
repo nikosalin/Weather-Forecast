@@ -53,7 +53,9 @@ export const usePlacesStore = create<PlacesState>()(
       // Never trust storage: fall back to an empty list if it was tampered with.
       merge: (persisted, current) => {
         const parsed = persistedSchema.safeParse(persisted);
-        return parsed.success ? { ...current, places: parsed.data.places } : current;
+        return parsed.success
+          ? { ...current, places: parsed.data.places }
+          : current;
       },
     },
   ),

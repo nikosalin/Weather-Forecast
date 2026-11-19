@@ -4,7 +4,6 @@ import { formatCoordinates } from '../../lib/coordinates';
 import { usePlacesStore, useSettingsStore } from '../../schemas';
 import type { Place } from '../../types';
 import { DailyForecast } from './DailyForecast';
-2.
 import {
   formatPrecipitation,
   formatTemperature,
@@ -85,9 +84,7 @@ export function WeatherPanel({ place, onClose }: WeatherPanelProps) {
             </div>
             <div>
               <dt>Rain</dt>
-              <dd>
-                {formatPrecipitation(data.current.precipitation, units)}
-              </dd>
+              <dd>{formatPrecipitation(data.current.precipitation, units)}</dd>
             </div>
           </dl>
 

@@ -1,8 +1,4 @@
-import type {
-  Coordinates,
-  Place,
-  WeatherSnapshot,
-} from '../types';
+import type { Coordinates, Place, WeatherSnapshot } from '../types';
 import { getJson } from '../http';
 import {
   forecastResponseSchema,
@@ -45,10 +41,7 @@ export async function fetchWeather(
   if (locations.length === 0) return [];
 
   const url = new URL(FORECAST_URL);
-  url.searchParams.set(
-    'latitude',
-    locations.map((l) => l.latitude).join(','),
-  );
+  url.searchParams.set('latitude', locations.map((l) => l.latitude).join(','));
   url.searchParams.set(
     'longitude',
     locations.map((l) => l.longitude).join(','),

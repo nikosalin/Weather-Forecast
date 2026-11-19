@@ -25,7 +25,10 @@ export function normalizeCoordinates({
   };
 }
 
-export function formatCoordinates({ latitude, longitude }: Coordinates): string {
+export function formatCoordinates({
+  latitude,
+  longitude,
+}: Coordinates): string {
   const ns = latitude >= 0 ? 'N' : 'S';
   const ew = longitude >= 0 ? 'E' : 'W';
   return `${Math.abs(latitude).toFixed(2)}°${ns}, ${Math.abs(longitude).toFixed(2)}°${ew}`;

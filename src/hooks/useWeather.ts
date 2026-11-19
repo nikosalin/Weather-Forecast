@@ -53,7 +53,9 @@ export function useWeather(coordinates: Coordinates | null) {
  */
 export function useWeatherForPlaces(places: readonly Place[]) {
   const queryClient = useQueryClient();
-  const locations = places.map((place) => normalizeCoordinates(place.coordinates));
+  const locations = places.map((place) =>
+    normalizeCoordinates(place.coordinates),
+  );
 
   return useQuery({
     queryKey: weatherKeys.batch(locations),
@@ -107,7 +109,6 @@ function readFresh(
     weatherKeys.location(location),
   );
   const isFresh =
-    state?.data !== undefined &&
-    Date.now() - state.dataUpdatedAt < STALE_TIME;
+    state?.data !== undefined && Date.now() - state.dataUpdatedAt < STALE_TIME;
   return isFresh ? state.data : undefined;
 }

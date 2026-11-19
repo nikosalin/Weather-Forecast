@@ -42,11 +42,7 @@ function FlyToLocation({ target }: { target: Coordinates | null }) {
   return null;
 }
 
-function MapClickHandler({
-  onPick,
-}: {
-  onPick: (place: Place) => void;
-}) {
+function MapClickHandler({ onPick }: { onPick: (place: Place) => void }) {
   useMapEvents({
     click(event) {
       onPick(
@@ -61,11 +57,7 @@ function MapClickHandler({
   return null;
 }
 
-function SavedPlaceMarkers({
-  onSelect,
-}: {
-  onSelect: (place: Place) => void;
-}) {
+function SavedPlaceMarkers({ onSelect }: { onSelect: (place: Place) => void }) {
   const { places } = usePlacesStore();
   const { data: weatherByPlace } = useWeatherForPlaces(places);
 
@@ -133,24 +125,20 @@ export function MapExplorer({
         scrollWheelZoom
         className={styles.map}
         inertia={false}
-worldCopyJump={false}
+        worldCopyJump={false}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            bounds={WORLD_BOUNDS}
+          bounds={WORLD_BOUNDS}
           noWrap
         />
 
         <FlyToLocation target={mapTarget} />
 
-        <MapClickHandler
-          onPick={(place) => onPlaceSelect(place, false)}
-        />
+        <MapClickHandler onPick={(place) => onPlaceSelect(place, false)} />
 
-        <SavedPlaceMarkers
-          onSelect={(place) => onPlaceSelect(place, false)}
-        />
+        <SavedPlaceMarkers onSelect={(place) => onPlaceSelect(place, false)} />
 
         {selectedPlace && <SelectedMarker place={selectedPlace} />}
       </MapContainer>

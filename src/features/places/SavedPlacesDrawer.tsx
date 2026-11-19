@@ -10,7 +10,6 @@ import styles from './SavedPlacesDrawer.module.css';
 interface SavedPlacesDrawerProps {
   onSelect: (place: Place) => void;
   isWeatherPanelOpen: boolean;
-
 }
 
 export function SavedPlacesDrawer({
@@ -28,10 +27,8 @@ export function SavedPlacesDrawer({
 
   return (
     <aside
-  className={`${styles.root} ${
-    isWeatherPanelOpen ? styles.panelOpen : ''
-  }`}
->
+      className={`${styles.root} ${isWeatherPanelOpen ? styles.panelOpen : ''}`}
+    >
       <button
         className={styles.toggle}
         onClick={() => setIsOpen((open) => !open)}

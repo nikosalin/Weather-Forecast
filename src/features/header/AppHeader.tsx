@@ -19,12 +19,11 @@ export function AppHeader({
   onThemeCycle,
   onCurrentLocation,
 }: AppHeaderProps) {
-
-    const themeIcon = {
-  light: '☀',
-  dark: '☾',
-  system: '◐',
-}[theme];
+  const themeIcon = {
+    light: '☀',
+    dark: '☾',
+    system: '◐',
+  }[theme];
 
   return (
     <header className={styles.root}>
@@ -50,16 +49,16 @@ export function AppHeader({
         </button>
 
         <button
-  className={styles.textButton}
-  onClick={onThemeCycle}
-  title={`Theme: ${theme}`}
-  aria-label={`Change theme. Current setting: ${theme}`}
->
-  <span className={styles.themeIcon} aria-hidden="true">
-    {themeIcon}
-  </span>
-  <span className={styles.themeLabel}>Theme: {theme}</span>
-</button>
+          className={styles.textButton}
+          onClick={onThemeCycle}
+          title={`Theme: ${theme}`}
+          aria-label={`Change theme. Current setting: ${theme}`}
+        >
+          <span className={styles.themeIcon} aria-hidden="true">
+            {themeIcon}
+          </span>
+          <span className={styles.themeLabel}>Theme: {theme}</span>
+        </button>
       </div>
     </header>
   );

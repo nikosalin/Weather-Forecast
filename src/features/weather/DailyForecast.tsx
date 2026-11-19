@@ -1,5 +1,8 @@
 import { describeWeather } from '../../api/weatherCodes';
-import type { DailyForecast as DailyForecastType, UnitSystem } from '../../types';
+import type {
+  DailyForecast as DailyForecastType,
+  UnitSystem,
+} from '../../types';
 import { formatTemperature } from '../../units/units';
 import styles from './DailyForecast.module.css';
 

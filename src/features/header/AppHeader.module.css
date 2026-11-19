@@ -83,20 +83,20 @@
     padding: 0 16px;
   }
 
- .brandLabel,
-.locationLabel,
-.themeLabel {
-  display: none;
-}
+  .brandLabel,
+  .locationLabel,
+  .themeLabel {
+    display: none;
+  }
 
-.actions {
-  display: flex;
-  gap: 2px;
-}
+  .actions {
+    display: flex;
+    gap: 2px;
+  }
 
-.textButton {
-  padding: 8px 6px;
-}
+  .textButton {
+    padding: 8px 6px;
+  }
 
   .locationButton {
     width: 42px;

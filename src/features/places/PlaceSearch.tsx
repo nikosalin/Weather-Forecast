@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { usePlaceSearch } from '../../hooks';
 import type { Place } from '../../types';
 import styles from './PlaceSearch.module.css';
+import type { PlaceSearchProps } from '../../types';
 
-interface PlaceSearchProps {
-  onSelect: (place: Place) => void;
-}
 
 export function PlaceSearch({ onSelect }: PlaceSearchProps) {
   const [query, setQuery] = useState('');

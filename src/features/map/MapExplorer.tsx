@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect } from 'react';
 import {
   CircleMarker,
   MapContainer,
@@ -11,7 +11,7 @@ import { describeWeather } from '../../api/weatherCodes';
 import { useWeatherForPlaces } from '../../hooks';
 import { createPlaceFromCoordinates } from '../../lib/coordinates';
 import { usePlacesStore } from '../../schemas';
-import type { Coordinates, Place } from '../../types';
+import type { Coordinates, MapExplorerProps, Place } from '../../types';
 import styles from './MapExplorer.module.css';
 
 const WORLD_CENTER: [number, number] = [22, 8];
@@ -21,12 +21,6 @@ const WORLD_BOUNDS: [[number, number], [number, number]] = [
   [85, 180],
 ];
 
-interface MapExplorerProps {
-  selectedPlace: Place | null;
-  mapTarget: Coordinates | null;
-  onPlaceSelect: (place: Place, shouldFlyTo?: boolean) => void;
-  children?: ReactNode;
-}
 
 function FlyToLocation({ target }: { target: Coordinates | null }) {
   const map = useMap();

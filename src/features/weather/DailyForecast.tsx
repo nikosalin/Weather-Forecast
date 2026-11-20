@@ -1,15 +1,9 @@
 import { describeWeather } from '../../api/weatherCodes';
-import type {
-  DailyForecast as DailyForecastType,
-  UnitSystem,
-} from '../../types';
+import type { DailyForecastProps } from '../../types';
+
 import { formatTemperature } from '../../units/units';
 import styles from './DailyForecast.module.css';
 
-interface DailyForecastProps {
-  forecast: DailyForecastType[];
-  units: UnitSystem;
-}
 
 function formatDay(date: string, index: number): string {
   if (index === 0) {

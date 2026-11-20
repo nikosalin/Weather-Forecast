@@ -3,14 +3,10 @@ import { describeWeather } from '../../api/weatherCodes';
 import { useWeatherForPlaces } from '../../hooks';
 import { formatCoordinates } from '../../lib/coordinates';
 import { usePlacesStore, useSettingsStore } from '../../schemas';
-import type { Place } from '../../types';
 import { formatTemperature } from '../../units/units';
 import styles from './SavedPlacesDrawer.module.css';
+import type { SavedPlacesDrawerProps } from '../../types';
 
-interface SavedPlacesDrawerProps {
-  onSelect: (place: Place) => void;
-  isWeatherPanelOpen: boolean;
-}
 
 export function SavedPlacesDrawer({
   onSelect,

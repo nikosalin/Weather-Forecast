@@ -2,7 +2,6 @@ import { describeWeather } from '../../api/weatherCodes';
 import { useWeather } from '../../hooks';
 import { formatCoordinates } from '../../lib/coordinates';
 import { usePlacesStore, useSettingsStore } from '../../schemas';
-import type { Place } from '../../types';
 import { DailyForecast } from './DailyForecast';
 import {
   formatPrecipitation,
@@ -10,11 +9,9 @@ import {
   formatWindSpeed,
 } from '../../units/units';
 import styles from './WeatherPanel.module.css';
+import type { WeatherPanelProps } from '../../types';
 
-interface WeatherPanelProps {
-  place: Place;
-  onClose: () => void;
-}
+
 
 export function WeatherPanel({ place, onClose }: WeatherPanelProps) {
   const { units } = useSettingsStore();

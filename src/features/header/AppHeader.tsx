@@ -1,15 +1,8 @@
 import { PlaceSearch } from '../../features/places/PlaceSearch';
-import type { Place, ThemePreference, UnitSystem } from '../../types';
+import type { AppHeaderProps } from '../../types';
 import styles from './AppHeader.module.css';
 
-interface AppHeaderProps {
-  units: UnitSystem;
-  theme: ThemePreference;
-  onPlaceSelect: (place: Place) => void;
-  onUnitsToggle: () => void;
-  onThemeCycle: () => void;
-  onCurrentLocation: () => void;
-}
+
 
 export function AppHeader({
   units,

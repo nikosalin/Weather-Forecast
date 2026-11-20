@@ -1,0 +1,51 @@
+.root {
+  margin: 22px 0;
+}
+
+.title {
+  margin: 0 0 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.scrollArea {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.hour {
+  display: grid;
+  min-width: 58px;
+  place-items: center;
+  gap: 5px;
+  padding: 10px 6px;
+  border-radius: 10px;
+  background: var(--surface-muted);
+}
+
+.time {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.temperature {
+  color: var(--text-primary);
+  font-size: 11px;
+}
+
+.rain {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+}

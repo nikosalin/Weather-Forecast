@@ -20,6 +20,13 @@ const CURRENT_FIELDS = [
   'is_day',
 ] as const;
 
+const HOURLY_FIELDS = [
+  'temperature_2m',
+  'weather_code',
+  'precipitation_probability',
+  'is_day',
+] as const;
+
 const DAILY_FIELDS = [
   'weather_code',
   'temperature_2m_max',
@@ -47,6 +54,8 @@ export async function fetchWeather(
     locations.map((l) => l.longitude).join(','),
   );
   url.searchParams.set('current', CURRENT_FIELDS.join(','));
+  url.searchParams.set('hourly', HOURLY_FIELDS.join(','));
+  url.searchParams.set('forecast_hours', '24');
   url.searchParams.set('daily', DAILY_FIELDS.join(','));
   url.searchParams.set('timezone', 'auto');
   url.searchParams.set('forecast_days', '7');
@@ -75,7 +84,7 @@ export async function searchPlaces(
 }
 
 function toSnapshot(item: ForecastItem): WeatherSnapshot {
-  const { current, daily } = item;
+  const { current, hourly, daily } = item;
 
   return {
     timezone: item.timezone,
@@ -89,6 +98,13 @@ function toSnapshot(item: ForecastItem): WeatherSnapshot {
       weatherCode: current.weather_code,
       isDay: current.is_day === 1,
     },
+    hourly: hourly.time.map((time, i) => ({
+      time,
+      temperature: hourly.temperature_2m[i],
+      weatherCode: hourly.weather_code[i],
+      precipitationProbability: hourly.precipitation_probability[i],
+      isDay: hourly.is_day[i] === 1,
+    })),
     daily: daily.time.map((date, i) => ({
       date,
       weatherCode: daily.weather_code[i],

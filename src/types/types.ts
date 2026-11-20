@@ -3,6 +3,8 @@
  * response shapes live in `api/schemas.ts` and never leak past `api/`.
  */
 
+import type { HourlyForecast } from './';
+
 export interface Coordinates {
   latitude: number;
   longitude: number;
@@ -45,6 +47,7 @@ export interface WeatherSnapshot {
   timezone: string;
   current: CurrentWeather;
   daily: DailyForecast[];
+  hourly: HourlyForecast[];
 }
 
 export type UnitSystem = 'metric' | 'imperial';

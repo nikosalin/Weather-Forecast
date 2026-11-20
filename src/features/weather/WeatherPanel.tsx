@@ -10,8 +10,7 @@ import {
 } from '../../units/units';
 import styles from './WeatherPanel.module.css';
 import type { WeatherPanelProps } from '../../types';
-
-
+import { HourlyForecast } from './HourlyForecast';
 
 export function WeatherPanel({ place, onClose }: WeatherPanelProps) {
   const { units } = useSettingsStore();
@@ -84,6 +83,8 @@ export function WeatherPanel({ place, onClose }: WeatherPanelProps) {
               <dd>{formatPrecipitation(data.current.precipitation, units)}</dd>
             </div>
           </dl>
+
+          <HourlyForecast forecast={data.hourly} units={units} />
 
           <DailyForecast forecast={data.daily} units={units} />
         </>

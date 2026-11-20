@@ -16,6 +16,14 @@ const currentSchema = z.object({
   is_day: z.number(),
 });
 
+const hourlySchema = z.object({
+  time: z.array(z.string()),
+  temperature_2m: z.array(z.number()),
+  weather_code: z.array(z.number()),
+  precipitation_probability: z.array(z.number().nullable()),
+  is_day: z.array(z.number()),
+});
+
 const dailySchema = z.object({
   time: z.array(z.string()),
   weather_code: z.array(z.number()),
@@ -28,6 +36,7 @@ const forecastItemSchema = z.object({
   timezone: z.string(),
   current: currentSchema,
   daily: dailySchema,
+  hourly: hourlySchema,
 });
 
 /** Open-Meteo returns an object for one location and an array for several. */

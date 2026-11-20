@@ -4,7 +4,6 @@ import type { Place } from '../../types';
 import styles from './PlaceSearch.module.css';
 import type { PlaceSearchProps } from '../../types';
 
-
 export function PlaceSearch({ onSelect }: PlaceSearchProps) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);

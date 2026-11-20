@@ -7,7 +7,6 @@ import { formatTemperature } from '../../units/units';
 import styles from './SavedPlacesDrawer.module.css';
 import type { SavedPlacesDrawerProps } from '../../types';
 
-
 export function SavedPlacesDrawer({
   onSelect,
   isWeatherPanelOpen,

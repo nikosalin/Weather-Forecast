@@ -21,7 +21,6 @@ const WORLD_BOUNDS: [[number, number], [number, number]] = [
   [85, 180],
 ];
 
-
 function FlyToLocation({ target }: { target: Coordinates | null }) {
   const map = useMap();
 

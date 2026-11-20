@@ -2,8 +2,6 @@ import { PlaceSearch } from '../../features/places/PlaceSearch';
 import type { AppHeaderProps } from '../../types';
 import styles from './AppHeader.module.css';
 
-
-
 export function AppHeader({
   units,
   theme,

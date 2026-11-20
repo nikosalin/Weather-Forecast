@@ -4,7 +4,6 @@ import type { DailyForecastProps } from '../../types';
 import { formatTemperature } from '../../units/units';
 import styles from './DailyForecast.module.css';
 
-
 function formatDay(date: string, index: number): string {
   if (index === 0) {
     return 'Today';
